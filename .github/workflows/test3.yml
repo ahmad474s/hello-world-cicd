@@ -24,9 +24,10 @@ jobs:
 
     - name: Copy file to local machine
       run: |
-        scp -o StrictHostKeyChecking=no -P 22 generated_file.txt ahmad@192.168.26.129:/home/github_action
+        scp -o StrictHostKeyChecking=no -P 22 generated_file.txt ahmad@192.168.26.129:/home/ahmad/github_action
       # Note: Replace 'ahmad', '192.168.26.129', and '/home/github_action' with your actual SSH username, Ubuntu machine IP, and the desired destination path.
 
     - name: Display file content
       run: |
+        chmod +r generated_file.txt
         cat generated_file.txt
