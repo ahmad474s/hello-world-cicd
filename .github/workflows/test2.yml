@@ -13,15 +13,54 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Set up SSH
+      uses: webfactory/ssh-agent@v0.5.0
+      with:
+        ssh-private-key: |
+          -----BEGIN OPENSSH PRIVATE KEY-----
+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
+-----END OPENSSH PRIVATE KEY-----
+    
     - name: Create file
       run: |
-        echo "My Name is Ahmad." > ahmad.txt
+        echo "This is a generated file." > generated_file.txt
 
     - name: Copy file to local machine
       run: |
-        scp -o StrictHostKeyChecking=no -P 22 ahmad.txt ahmad@192.168.26.129:/home/github_action
-      # Note: Replace 'user', 'your-ubuntu', and '/path/to/destination' with your actual SSH username, Ubuntu machine IP, and the desired destination path.
-
-    - name: Display file content
-      run: |
-        cat ahmad.txt
+        scp -o StrictHostKeyChecking=no -P 22 generated_file.txt ahmad@192.168.26.129:/home/github_action
+      
