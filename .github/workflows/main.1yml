@@ -1,0 +1,19 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+
+      - name: Create File on Local Ubuntu Machine
+        run: |
+          echo "Hello, this is a test file" > /home/ahamd/testfile.txt
