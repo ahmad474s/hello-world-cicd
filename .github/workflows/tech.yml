@@ -24,7 +24,7 @@ jobs:
 
     - name: Copy file to local machine
       run: |
-        scp -o StrictHostKeyChecking=no -P 22 generated_file.txt ahmad@192.168.26.129:/home/ahmad/
+        scp -o StrictHostKeyChecking=no -P 22 generated_file.txt ahmad@192.168.26.129:/home/ahmad/mysite/hello-world-cicd
 
     - name: Display file content
       run: |
