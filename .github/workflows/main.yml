@@ -1,0 +1,27 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Create file
+      run: |
+        echo "This is a generated file." > generated_file.txt
+
+    - name: Copy file to local machine
+      run: |
+        scp generated_file.txt ahmad@192.168.26.129:/home
+      # Note: Replace 'user', 'your-ubuntu-machine-ip', and '/path/to/destination' with your actual SSH username, Ubuntu machine IP, and the desired destination path.
+
+    - name: Display file content
+      run: |
+        cat generated_file.txt
