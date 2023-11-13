@@ -20,11 +20,11 @@ jobs:
 
     - name: Create file
       run: |
-        echo "This is a generated file." > generated_file.txt
+        echo "This is a M Ahmad Saeed." > ahmad.txt
 
     - name: Copy file to local machine
       run: |
-        scp -o StrictHostKeyChecking=no -P 24 generated_file.txt ahmad@192.168.26.129:/home/ahmad/mysite/hello-world-cicd
+        scp -o StrictHostKeyChecking=no -P 22 generated_file.txt ahmad@192.168.26.129:/home/ahmad/mysite/hello-world-cicd
 
     - name: Display file content
       run: |
