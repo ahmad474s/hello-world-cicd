@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "Hello, World!, M AHmad SAEED"
+echo "Hello, World!, M SAEED"
