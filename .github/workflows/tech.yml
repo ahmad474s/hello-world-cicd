@@ -13,18 +13,13 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Set up SSH
-      uses: webfactory/ssh-agent@v0.5.0
-      with:
-        ssh-private-key: ${{ secrets.G_Action }}
-
     - name: Create file
       run: |
         echo "This is a M Ahmad Saeed." > ahmad.txt
 
     - name: Copy file to local machine
       run: |
-        scp -o StrictHostKeyChecking=no -P 22 generated_file.txt ahmad@192.168.26.129:/home/ahmad/mysite/hello-world-cicd
+        cp generated_file.txt /home/ahmad/mysite/hello-world-cicd
 
     - name: Display file content
       run: |
